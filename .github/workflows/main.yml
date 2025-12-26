@@ -4,14 +4,14 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup MSVC
         uses: ilammy/msvc-dev-cmd@v1
       - name: Compile DLL
         run: |
           cl.exe /LD /EHsc /O2 Sovereign_HFT_Core_FINAL.cpp /link /out:Sovereign_HFT_Core.dll
       - name: Upload DLL
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Sovereign-DLL
           path: Sovereign_HFT_Core.dll
